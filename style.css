@@ -1,6 +1,7 @@
+/* Estilos Base y Tipografía */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Fondo muy claro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,68 +10,131 @@ body {
 }
 
 .container {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
+    transition: transform 0.3s ease-in-out; /* Animación sutil al cargar */
+}
+
+/* Animación sutil de hover para el contenedor si es necesario */
+.container:hover {
+    /* transform: translateY(-3px); */
 }
 
 h1 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    color: #343a40;
+    margin-bottom: 30px;
+    font-weight: 300; /* Fuente ligera */
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
 }
 
+/* Estilos de Etiquetas y Campos */
 label {
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #555;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600; /* Seminegrita */
+    color: #495057;
+    font-size: 0.95em;
 }
 
 input[type="text"],
 select,
 textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
     box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Animación al enfocar */
 }
 
+/* Animación sutil: efecto de enfoque */
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra de enfoque azul suave */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Estilos del Botón de Envío */
 button[type="submit"] {
     background-color: #007bff;
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación al hacer hover */
 }
 
+/* Animación sutil: cambio de color y levantamiento al hacer hover */
 button[type="submit"]:hover:not(:disabled) {
     background-color: #0056b3;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 button[type="submit"]:disabled {
-    background-color: #999;
+    background-color: #adb5bd;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
+/* Mensajes de Respuesta (Éxito/Error) */
 #responseMessage {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
+    transition: opacity 0.4s ease; /* Animación de aparición */
 }
 
 .hidden {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para el mensaje de Éxito */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Estilos para el mensaje de Error */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    padding: 15px;
+    margin-top: 20px;
 }
