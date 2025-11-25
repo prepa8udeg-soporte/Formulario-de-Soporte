@@ -19,30 +19,32 @@ form.addEventListener('submit', function(event) {
     const data = new URLSearchParams(formData);
 
     // Enviar los datos al Apps Script
-    fetch(GAS_WEB_APP_URL, {
+   fetch(GAS_WEB_APP_URL, {
         method: 'POST',
-        body: data, // El Apps Script espera los datos como 'application/x-www-form-urlencoded'
-        mode: 'no-cors' // Necesario para evitar errores de CORS con Apps Script
+        body: data, 
+        mode: 'no-cors'
     })
     .then(response => {
-        // La respuesta de Apps Script suele ser opaca debido a 'no-cors',
-        // pero la acción de guardado y correo ya debería haberse completado.
-
+        // Lógica de éxito: Añadir clase de éxito
         submitButton.textContent = 'Reporte Enviado ✅';
+        
+        // **MODIFICACIÓN AQUÍ**
+        responseMessage.className = 'success-message'; // Establece la clase de éxito
+        
         responseMessage.textContent = '¡Reporte enviado con éxito! Se ha registrado en la hoja de cálculo.';
-        responseMessage.classList.remove('hidden');
-        responseMessage.style.backgroundColor = '#d4edda'; // Estilo de éxito
-
+        
         // Resetear el formulario después de un éxito simulado
         form.reset();
     })
     .catch(error => {
-        // En caso de error de red
+        // Lógica de error: Añadir clase de error
         console.error('Error de red:', error);
         submitButton.textContent = 'Error al Enviar ❌';
+        
+        // **MODIFICACIÓN AQUÍ**
+        responseMessage.className = 'error-message'; // Establece la clase de error
+        
         responseMessage.textContent = 'Ocurrió un error al intentar enviar el reporte. Revisa la consola o tu URL.';
-        responseMessage.classList.remove('hidden');
-        responseMessage.style.backgroundColor = '#f8d7da'; // Estilo de error
     })
     .finally(() => {
         // Volver a habilitar el botón y resetear después de un breve tiempo
