@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reportes Técnicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛠️ Reporte Técnico</h1>
+        <form id="technicalReportForm">
+            
+            <label for="area">Área Afectada</label>
+            <select id="area" name="area" required>
+                <option value="" disabled selected>Seleccione un área</option>
+                <option value="Redes">Redes</option>
+                <option value="Hardware">Hardware / Equipos</option>
+                <option value="Software">Software / Aplicaciones</option>
+                <option value="Servidores">Servidores / Cloud</option>
+            </select>
+
+            <label for="reporteDe">Reportado Por (Nombre)</label>
+            <input type="text" id="reporteDe" name="reporteDe" required>
+
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad" name="prioridad" required>
+                <option value="Baja">Baja - Puede esperar</option>
+                <option value="Media">Media - Afecta el trabajo</option>
+                <option value="Alta">Alta - Impacto crítico o bloqueo</option>
+            </select>
+
+            <label for="descripcion">Descripción del Problema</label>
+            <textarea id="descripcion" name="descripcion" rows="5" required></textarea>
+
+            <button type="submit" id="submitButton">Enviar Reporte</button>
+            
+            <p id="responseMessage" class="hidden"></p>
+        </form>
+    </div>
+
+    <script src="functions.js"></script>
+</body>
+</html>
