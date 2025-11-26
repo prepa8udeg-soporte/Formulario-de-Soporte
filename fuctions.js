@@ -1,5 +1,5 @@
 // **IMPORTANTE:** Reemplaza ESTA URL con la URL de tu Despliegue de Apps Script.
-const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw3q9dSV3_HRiW3MXQ_Mi_h2tfYeKAJlG4lnKcX90dgYNegmT8UMgKtA1DuFwn040ub/exec";
+const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzzHxNG4tJvVMzJZR38Nwmbk6k5GTBx88__NUp2J7Y-6bvBiXmIKx9jj51coF-4Bi4L/exec";
 
 const form = document.getElementById('technicalReportForm');
 const submitButton = document.getElementById('submitButton');
