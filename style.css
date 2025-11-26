@@ -7,6 +7,8 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    padding: 20px; /* Padding general para evitar que el contenido toque los bordes del móvil */
+    box-sizing: border-box;
 }
 
 .container {
@@ -16,19 +18,14 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
     width: 100%;
     max-width: 500px;
-    transition: transform 0.3s ease-in-out; /* Animación sutil al cargar */
-}
-
-/* Animación sutil de hover para el contenedor si es necesario */
-.container:hover {
-    /* transform: translateY(-3px); */
+    transition: transform 0.3s ease-in-out; 
 }
 
 h1 {
     text-align: center;
     color: #343a40;
     margin-bottom: 30px;
-    font-weight: 300; /* Fuente ligera */
+    font-weight: 300; 
     border-bottom: 2px solid #007bff;
     padding-bottom: 10px;
 }
@@ -38,7 +35,7 @@ label {
     display: block;
     margin-top: 15px;
     margin-bottom: 5px;
-    font-weight: 600; /* Seminegrita */
+    font-weight: 600; 
     color: #495057;
     font-size: 0.95em;
 }
@@ -52,7 +49,7 @@ textarea {
     border-radius: 6px;
     box-sizing: border-box;
     font-size: 1em;
-    transition: border-color 0.3s, box-shadow 0.3s; /* Animación al enfocar */
+    transition: border-color 0.3s, box-shadow 0.3s; 
 }
 
 /* Animación sutil: efecto de enfoque */
@@ -60,7 +57,7 @@ input[type="text"]:focus,
 select:focus,
 textarea:focus {
     border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra de enfoque azul suave */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
     outline: none;
 }
 
@@ -80,7 +77,7 @@ button[type="submit"] {
     font-size: 1.1em;
     font-weight: 600;
     margin-top: 25px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación al hacer hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; 
 }
 
 /* Animación sutil: cambio de color y levantamiento al hacer hover */
@@ -104,7 +101,7 @@ button[type="submit"]:disabled {
     border-radius: 6px;
     text-align: center;
     font-weight: 600;
-    transition: opacity 0.4s ease; /* Animación de aparición */
+    transition: opacity 0.4s ease; 
 }
 
 .hidden {
@@ -137,4 +134,45 @@ button[type="submit"]:disabled {
     height: auto;
     padding: 15px;
     margin-top: 20px;
+}
+
+/* ========================================================= */
+/* --- OPTIMIZACIÓN MÓVIL (MEDIA QUERIES) --- */
+/* ========================================================= */
+
+/* Aplicar estos estilos cuando la pantalla tenga 600px o menos (típicamente móvil) */
+@media (max-width: 600px) {
+    
+    /* 1. Cuerpo: Quitar el centrado vertical en móviles largos */
+    body {
+        min-height: auto; /* Permite que el contenido fluya verticalmente */
+        padding: 15px; /* Menos padding en los bordes para ahorrar espacio */
+    }
+
+    /* 2. Contenedor: Menos padding interno en pantallas pequeñas */
+    .container {
+        padding: 20px;
+        border-radius: 8px; /* Bordes ligeramente menos redondeados */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Sombra más sutil */
+    }
+
+    /* 3. Título: Reducir el margen inferior del título */
+    h1 {
+        margin-bottom: 20px;
+        font-size: 1.5em; 
+    }
+    
+    /* 4. Inputs: Aumentar el tamaño de fuente para mejor lectura en móvil */
+    input[type="text"],
+    select,
+    textarea {
+        font-size: 1.05em; 
+        padding: 10px; /* Ligeramente menos padding */
+    }
+    
+    /* 5. Botón: Asegurar que el botón ocupe el espacio sin ser exagerado */
+    button[type="submit"] {
+        font-size: 1em;
+        padding: 15px;
+    }
 }
