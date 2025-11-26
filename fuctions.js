@@ -31,7 +31,7 @@ form.addEventListener('submit', function(event) {
         // **MODIFICACIÓN AQUÍ**
         responseMessage.className = 'success-message'; // Establece la clase de éxito
         
-        responseMessage.textContent = '¡Reporte enviado con éxito! Se ha registrado en la hoja de cálculo.';
+        responseMessage.textContent = '¡Reporte enviado con éxito! Pronto resolveremos la petición.';
         
         // Resetear el formulario después de un éxito simulado
         form.reset();
