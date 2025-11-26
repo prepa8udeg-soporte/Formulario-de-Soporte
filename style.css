@@ -145,8 +145,10 @@ button[type="submit"]:disabled {
     
     /* 1. Cuerpo: Quitar el centrado vertical en móviles largos */
     body {
-        min-height: auto; /* Permite que el contenido fluya verticalmente */
-        padding: 15px; /* Menos padding en los bordes para ahorrar espacio */
+        display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;    /* Centrado vertical */
+    min-height: 100vh;      /* Ocupa toda la altura visible */
     }
 
     /* 2. Contenedor: Menos padding interno en pantallas pequeñas */
